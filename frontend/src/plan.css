@@ -1,0 +1,17 @@
+/* ---------- "where you need to improve" ---------- */
+.human { display:flex; align-items:flex-start; gap:6px; margin:10px 0 0; font-size:13.5px; color:#8a4b0a; background:#fff7e8; border:1px solid #f6e1b8; border-radius:9px; padding:7px 10px; }
+.human .ico { margin-top:3px; color:#d97706; }
+.human b { color:#7c3f00; }
+
+.plan { margin-top:18px; padding:18px 20px; border-radius:14px; background:linear-gradient(180deg,#fffaf0,#fff); border:1px solid #f6e1b8; }
+.plan-head { display:flex; align-items:center; gap:10px; }
+.plan-head h3 { margin:0; font-size:17px; }
+.plan-head .ph-ico { width:36px; height:36px; margin:0; border-radius:10px; background:#fdeccb; color:#b45309; }
+.plan-intro { margin:10px 0 14px; font-size:15px; line-height:1.6; color:#3d3a33; }
+.plan-list { list-style:none; margin:0; padding:0; display:grid; gap:10px; }
+.plan-list li { display:grid; grid-template-columns:150px 1fr; gap:14px; align-items:start; padding:12px 14px; background:#fff; border:1px solid var(--line); border-radius:11px; }
+.plan-list p { margin:0 0 4px; font-size:13.5px; color:#46506b; line-height:1.5; }
+.plan-list p:last-child { margin:0; }
+.plan-list b { color:var(--text); }
+.plan-skill { display:inline-flex; align-items:center; gap:5px; justify-self:start; font-weight:700; font-size:13px; color:#b45309; background:#fdf3e1; border-radius:99px; padding:4px 11px; }
+@media (max-width:700px) { .plan-list li { grid-template-columns:1fr; gap:8px; } }

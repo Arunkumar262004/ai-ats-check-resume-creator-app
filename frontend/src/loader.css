@@ -1,0 +1,58 @@
+/* ---------- AI loader popup ---------- */
+.ai-card { width:min(440px,100%); padding:28px 28px 22px; text-align:center; background:rgba(255,255,255,.94); border:1px solid var(--line); border-radius:24px; box-shadow:0 24px 80px rgba(8,14,40,.2); animation:pop .35s cubic-bezier(.2,.9,.3,1.1); overflow:hidden; }
+.ai-card h3 { margin:6px 0 4px; font-size:19px; letter-spacing:-.01em; }
+.ai-msg { margin:0 0 16px; min-height:22px; color:var(--muted); font-size:14px; animation:msgin .5s ease both; }
+@keyframes msgin { from { opacity:0; transform:translateY(6px); } }
+.ai-time { color:#9aa2b8; font-size:12px; display:block; margin-top:10px; }
+
+.orb-wrap { position:relative; width:240px; height:240px; margin:0 auto; display:grid; place-items:center; perspective:700px; }
+.orb { position:relative; z-index:3; width:92px; height:92px; border-radius:50%; display:grid; place-items:center; color:#fff;
+  background:radial-gradient(circle at 30% 28%, #8cc4f5, #3d8bd9 45%, #245a98 100%);
+  box-shadow:0 0 0 8px rgba(61,139,217,.12), 0 14px 40px rgba(47,109,181,.45), inset 0 -8px 18px rgba(30,20,120,.35);
+  animation:breathe 2.4s ease-in-out infinite; }
+.orb::after { content:""; position:absolute; top:10px; left:16px; width:30px; height:16px; border-radius:50%; background:rgba(255,255,255,.35); filter:blur(3px); transform:rotate(-25deg); }
+.orb .ico { animation:twinkle 1.8s ease-in-out infinite; }
+@keyframes breathe { 50% { transform:scale(1.07); } }
+@keyframes twinkle { 50% { transform:scale(.82) rotate(18deg); opacity:.8; } }
+
+.pulse { position:absolute; width:92px; height:92px; border-radius:50%; border:2px solid rgba(61,139,217,.55); animation:ripple 2.8s ease-out infinite; }
+.pulse.p2 { animation-delay:.9s; } .pulse.p3 { animation-delay:1.8s; }
+@keyframes ripple { from { transform:scale(1); opacity:.8; } to { transform:scale(2.6); opacity:0; } }
+
+/* tilted 3D orbit rings with a glowing node */
+.orbit { position:absolute; border-radius:50%; border:1.5px dashed rgba(61,139,217,.35); animation:spin 7s linear infinite; }
+.orbit i { position:absolute; top:-6px; left:50%; width:12px; height:12px; margin-left:-6px; border-radius:50%; background:#3d8bd9; box-shadow:0 0 14px 3px rgba(61,139,217,.7); }
+.o1 { width:150px; height:150px; transform:rotateX(68deg); }
+.o2 { width:196px; height:196px; transform:rotateX(68deg) rotateZ(60deg); animation-duration:10s; animation-direction:reverse; border-color:rgba(14,165,233,.35); }
+.o2 i { background:#0ea5e9; box-shadow:0 0 14px 3px rgba(14,165,233,.7); }
+.o3 { width:236px; height:236px; transform:rotateX(68deg) rotateZ(-40deg); animation-duration:14s; border-color:rgba(194,112,61,.3); }
+.o3 i { background:#14b8c4; box-shadow:0 0 14px 3px rgba(194,112,61,.7); }
+@keyframes spin { to { rotate:360deg; } }
+
+.float-chip { position:absolute; z-index:4; padding:4px 11px; font-size:11.5px; font-weight:600; color:#245a98; background:#fff; border:1px solid #bcd3ee; border-radius:99px; box-shadow:0 6px 16px rgba(8,14,40,.14); animation:bob 3.2s ease-in-out infinite; white-space:nowrap; }
+.fc0 { top:8%; left:-4%; } .fc1 { top:20%; right:-6%; } .fc2 { bottom:14%; left:-2%; } .fc3 { bottom:6%; right:0; }
+@keyframes bob { 50% { transform:translateY(-8px); } }
+
+.bar { height:6px; border-radius:99px; background:var(--brand-soft); overflow:hidden; }
+.bar span { display:block; height:100%; width:40%; border-radius:99px; background:linear-gradient(90deg,#3d8bd9,#0ea5e9,#14b8c4); animation:slide 1.4s ease-in-out infinite; }
+@keyframes slide { from { transform:translateX(-100%); } to { transform:translateX(250%); } }
+
+/* ---------- robot ---------- */
+.robot { position:relative; z-index:3; width:124px; height:144px; overflow:visible; animation:hover 2.6s ease-in-out infinite; filter:drop-shadow(0 14px 18px rgba(47,109,181,.30)); }
+@keyframes hover { 50% { transform:translateY(-9px); } }
+.robot .rb-shadow { transform-box:fill-box; transform-origin:center; animation:shadow 2.6s ease-in-out infinite; }
+@keyframes shadow { 50% { transform:scale(.78); opacity:.1; } }
+.rb-eyes { animation:look 5s ease-in-out infinite; }
+@keyframes look { 0%,18%,100% { transform:translateX(0); } 30%,45% { transform:translateX(-3px); } 60%,75% { transform:translateX(3px); } }
+.rb-eye { transform-box:fill-box; transform-origin:center; animation:blink 4s infinite; }
+@keyframes blink { 0%,90%,100% { transform:scaleY(1); } 94% { transform:scaleY(.08); } }
+.rb-glow { transform-box:fill-box; transform-origin:center; animation:glow 1.6s ease-in-out infinite; }
+@keyframes glow { 50% { transform:scale(1.7); opacity:.35; } }
+.rb-tip { animation:tip 1.6s ease-in-out infinite; }
+@keyframes tip { 50% { fill:#a5f3fc; } }
+.rb-wave { transform-box:fill-box; transform-origin:50% 8%; animation:wave 1.5s ease-in-out infinite; }
+@keyframes wave { 0%,100% { transform:rotate(0); } 50% { transform:rotate(-28deg); } }
+.rb-lights circle { animation:lamp 1.2s ease-in-out infinite; }
+.rb-lights circle:nth-child(2) { animation-delay:.2s; } .rb-lights circle:nth-child(3) { animation-delay:.4s; }
+@keyframes lamp { 50% { opacity:.25; } }
+.pulse { width:110px; height:110px; }

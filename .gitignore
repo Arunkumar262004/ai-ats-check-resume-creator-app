@@ -1,0 +1,54 @@
+# ---------- secrets (never commit API keys) ----------
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+
+# ---------- local data ----------
+*.db
+*.sqlite
+*.sqlite3
+uploads/
+
+# ---------- Python ----------
+.venv/
+venv/
+env/
+__pycache__/
+*.py[cod]
+*.egg-info/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+
+# ---------- Node / frontend ----------
+node_modules/
+frontend/dist/
+frontend/build/
+frontend/.vite/
+*.tsbuildinfo
+
+# ---------- logs ----------
+*.log
+npm-debug.log*
+
+# ---------- demo videos / big media (too large for git; host on LinkedIn or YouTube) ----------
+*.mp4
+*.webm
+*.mov
+*.mkv
+*.avi
+
+# ---------- temp files from tooling ----------
+*.tmp
+*.tmp.*
+smoke.tmp.*
+
+# ---------- editor / OS ----------
+.vscode/
+.idea/
+*.swp
+.DS_Store
+Thumbs.db
+desktop.ini

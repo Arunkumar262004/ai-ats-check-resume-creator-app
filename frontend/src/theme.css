@@ -1,0 +1,37 @@
+/* ---------- white page + blue dotted particles; navy / blue / cyan used for text & accents ---------- */
+:root { --text:#14213d; --muted:#5b6b85; --line:#e3e9f3; }
+html { min-height:100%; }
+body {
+  min-height:100vh; color:var(--text);
+  /* white page with a very soft blue/cyan wash for depth */
+  background-color:#ffffff;
+  background-image:
+    radial-gradient(900px 520px at 6% -4%, rgba(47,109,181,.10), transparent 62%),
+    radial-gradient(800px 520px at 100% 14%, rgba(20,184,196,.09), transparent 62%),
+    radial-gradient(1000px 620px at 50% 112%, rgba(79,140,255,.09), transparent 62%);
+  background-attachment:fixed;
+}
+
+.bg-dots { position:fixed; inset:0; width:100vw; height:100vh; z-index:0; pointer-events:none; }
+.app { position:relative; z-index:1; }
+
+h1, h2, h3 { color:#14213d; }
+a, .link-blue { color:#2f6db5; }
+
+/* header: white frosted glass over the dots */
+header { position:sticky; top:0; z-index:20; background:rgba(255,255,255,.82); -webkit-backdrop-filter:blur(10px); backdrop-filter:blur(10px); border-bottom:1px solid var(--line); }
+header h1 { color:#14213d; } header p { color:var(--muted); }
+.logo { background:linear-gradient(135deg,#2f6db5,#14b8c4); box-shadow:0 6px 16px rgba(47,109,181,.30); }
+.header-in, main { max-width:1240px; }
+
+/* white cards with soft shadow so they stay readable over the dots */
+.card { background:linear-gradient(90deg,#2f6db5,#14b8c4) top left / 100% 3px no-repeat, #fff; border-color:var(--line); transition:box-shadow .2s, transform .2s; box-shadow:0 2px 6px rgba(20,33,61,.05), 0 14px 36px rgba(20,33,61,.09); }
+main { padding-bottom:48px; }
+.tabs { background:#eef3fa; }
+.placeholder, .drop { background:#f7faff; }
+.btn { background:linear-gradient(180deg,#3a7ac4,#2f6db5); }
+.btn:hover { background:linear-gradient(180deg,#336fb8,#245a98); }
+.btn.ghost { background:#e6eefa; color:#2f6db5; } .btn.ghost:hover { background:#d3e3f7; }
+.bar span { background:linear-gradient(90deg,#2f6db5,#14b8c4,#4f8cff); }
+.card:hover { box-shadow:0 4px 10px rgba(20,33,61,.06), 0 20px 46px rgba(47,109,181,.16); }
+.logo-svg { flex:none; filter:drop-shadow(0 4px 8px rgba(43,125,233,.28)); }
